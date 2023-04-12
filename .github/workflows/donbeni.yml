@@ -6,7 +6,7 @@ jobs:
      name: PHP Code sniffer
      runs-on: ubuntu-latest
 
-      steps:
+    steps:
       - uses: actions/checkout@v2
       - name: Install PHP
         uses: shivammathur/setup-php@v2
