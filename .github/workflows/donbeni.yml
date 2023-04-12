@@ -15,4 +15,4 @@ jobs:
         - name: Install Composer dependencies
           run: composer install --prefer-dist --no-interaction
         - name: Run PHP code Sniffer
-          run: vendor/bin/phpcs src --standars=PSR1,PSR2
+          run: vendor/bin/phpcs index.php --standars=PSR1,PSR2
