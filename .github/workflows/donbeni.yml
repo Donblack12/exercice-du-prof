@@ -16,7 +16,7 @@ jobs:
       run: composer install
 
     - name: Run PHPCS
-      uses: localheinz/composer-normalize-action@v0.8.0
+      uses: localheinz/composer-normalize-action@0.8.0
       with:
         args: 'run-script lint'
 
