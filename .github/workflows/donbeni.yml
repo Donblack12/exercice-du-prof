@@ -7,21 +7,18 @@ on:
 
 jobs:
   phpcs:
+    name: PHP Code sniffer
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: Install PHPCS
-      run: composer install
-
-    - name: Run PHPCS
-      uses: localheinz/composer-normalize-action@0.8.0
+    - name: Install PHP
+      uses: shivammathur/setup-php@v2
       with:
-        args: 'run-script lint'
+        php-version: 3.7.2
+        extensions: mbstring, zip
 
-    - name: Upload PHPCS Report
-      uses: actions/upload-artifact@v2
-      with:
-        name: phpcs-report
-        path: phpcs.xml
+    - name: Install Composer dependencies
+    - run: composer install --pref-dist --no-interaction
+    - name: Run PHP code Sniffer
+    - run: vendor/bin/phpcs src --standars=PSR1,PSR2
