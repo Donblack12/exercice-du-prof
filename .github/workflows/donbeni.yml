@@ -13,6 +13,6 @@ jobs:
             extensions: mbstring
 
         - name: Install Composer dependencies
-          run: composer install --pref-dist --no-interaction
+          run: composer install --prefer-dist --no-interaction
         - name: Run PHP code Sniffer
           run: vendor/bin/phpcs src --standars=PSR1,PSR2
