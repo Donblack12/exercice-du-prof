@@ -4,15 +4,15 @@ jobs:
   phpcs:
      name: PHP Code sniffer
      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v2
-      - name: Install PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 7.4
-          extensions: mbstring
+     steps:
+        - uses: actions/checkout@v2
+        - name: Install PHP
+          uses: shivammathur/setup-php@v2
+          with:
+            php-version: 7.4
+            extensions: mbstring
 
-      - name: Install Composer dependencies
-        run: composer install --pref-dist --no-interaction
-      - name: Run PHP code Sniffer
-        run: vendor/bin/phpcs src --standars=PSR1,PSR2
+        - name: Install Composer dependencies
+          run: composer install --pref-dist --no-interaction
+        - name: Run PHP code Sniffer
+          run: vendor/bin/phpcs src --standars=PSR1,PSR2
