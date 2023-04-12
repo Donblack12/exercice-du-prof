@@ -1,5 +1,4 @@
 name: PHP CodeSniffer
-
 on: [push]
 jobs:
   phpcs:
