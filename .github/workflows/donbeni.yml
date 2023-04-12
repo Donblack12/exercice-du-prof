@@ -1,6 +1,6 @@
 name: PHP CodeSniffer
 
-on:
+on: [push]
 jobs:
   phpcs:
     - name: PHP Code sniffer
