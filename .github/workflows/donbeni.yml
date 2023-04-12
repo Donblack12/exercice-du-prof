@@ -3,7 +3,7 @@ name: PHP CodeSniffer
 on:
 jobs:
   phpcs:
-    name: PHP Code sniffer
+    - name: PHP Code sniffer
     runs-on: ubuntu-latest
 
     steps:
