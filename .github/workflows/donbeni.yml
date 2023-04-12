@@ -1,10 +1,6 @@
 name: PHP CodeSniffer
 
 on:
-  push:
-    branches:
-      - master
-
 jobs:
   phpcs:
     name: PHP Code sniffer
@@ -15,10 +11,10 @@ jobs:
     - name: Install PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: 3.7.2
-        extensions: mbstring, zip
+        php-version: 7.4
+        extensions: mbstring
 
     - name: Install Composer dependencies
-    - run: composer install --pref-dist --no-interaction
+      run: composer install --pref-dist --no-interaction
     - name: Run PHP code Sniffer
-    - run: vendor/bin/phpcs src --standars=PSR1,PSR2
+      run: vendor/bin/phpcs src --standars=PSR1,PSR2
